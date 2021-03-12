@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('CleanWorkspace') {
+            
+            steps {
+                deleteDir()
+            }
+            
+        }
+        
+        stage('Experiment') {
+            steps {
+                script{
+                    sh 'java -version'
+                }
+            }
+        }
+    }
+}
